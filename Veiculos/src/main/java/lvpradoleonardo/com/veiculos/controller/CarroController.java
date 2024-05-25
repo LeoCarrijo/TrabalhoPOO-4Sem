@@ -26,4 +26,9 @@ public class CarroController {
     public CarroDTO consultarPorId(@PathVariable Long id) {
         return injecao.consultarPorId(id);
     }
+
+    @DeleteMapping("/{id}")
+    public String removerCarro(@PathVariable Long id) {
+        return injecao.removerCarro(id);
+    }
 }
