@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class CarroEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     @Column(name = "marca")
     private String marca;
     @Column(name = "modelo")
@@ -17,7 +17,7 @@ public class CarroEntity {
     @Column(name = "valor")
     private float valor;
 
-    public CarroEntity(int id, String marca, String modelo, int ano, float valor) {
+    public CarroEntity(Long id, String marca, String modelo, int ano, float valor) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -25,11 +25,11 @@ public class CarroEntity {
         this.valor = valor;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
