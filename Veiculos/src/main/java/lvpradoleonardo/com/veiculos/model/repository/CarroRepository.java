@@ -1,4 +1,4 @@
-package lvpradoleonardo.com.veiculos;
+package lvpradoleonardo.com.veiculos.model.repository;
 
 import lvpradoleonardo.com.veiculos.model.entity.CarroEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
