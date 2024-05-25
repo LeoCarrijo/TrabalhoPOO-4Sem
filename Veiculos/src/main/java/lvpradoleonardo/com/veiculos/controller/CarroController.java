@@ -1,4 +1,4 @@
-package lvpradoleonardo.com.veiculos;
+package lvpradoleonardo.com.veiculos.controller;
 
 import lvpradoleonardo.com.veiculos.model.entity.CarroEntity;
 import lvpradoleonardo.com.veiculos.service.CarroService;
