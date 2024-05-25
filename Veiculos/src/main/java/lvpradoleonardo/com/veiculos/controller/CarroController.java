@@ -36,4 +36,9 @@ public class CarroController {
     public List<CarroDTO> darDescontoGeral() {
         return injecao.darDescontoGeral();
     }
+
+    @PatchMapping("/{id}")
+    public CarroDTO atualizarPorId(@PathVariable Long id, @RequestBody CarroDTO carroDTO) {
+        return injecao.atualizarPorId(id, carroDTO);
+    }
 }
