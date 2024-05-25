@@ -25,6 +25,10 @@ public class CarroEntity {
         this.valor = valor;
     }
 
+    public CarroEntity() {
+        
+    }
+
     public Long getId() {
         return id;
     }
