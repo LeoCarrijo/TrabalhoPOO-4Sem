@@ -18,7 +18,7 @@ public class CarroService {
         return converteParaDTO(injecao.save(converteParaEntity(carroDTO)));
     }
 
-    public List<CarroDTO> consultarTodos() {
+    public List<CarroDTO> consultarCarros() {
         return converteEntitiesParaDTOs(injecao.findAll());
     }
 

@@ -3,10 +3,9 @@ package lvpradoleonardo.com.veiculos.controller;
 import lvpradoleonardo.com.veiculos.model.dto.CarroDTO;
 import lvpradoleonardo.com.veiculos.service.CarroService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/carro")
@@ -16,5 +15,15 @@ public class CarroController {
     @PostMapping
     public CarroDTO inserirCarro(@RequestBody CarroDTO carroDTO) {
         return injecao.insere(carroDTO);
+    }
+
+    @GetMapping
+    public List<CarroDTO> consultarCarros() {
+        return injecao.consultarCarros();
+    }
+
+    @GetMapping("/{id}")
+    public CarroDTO consultarPorId(@PathVariable Long id) {
+        return injecao.consultarPorId(id);
     }
 }
