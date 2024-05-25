@@ -38,6 +38,14 @@ public class CarroService {
         return null;
     }
 
+    public String removerCarro(Long id) {
+        if (injecao.existsById(id)) {
+            injecao.deleteById(id);
+            return "Carro removido com sucesso!";
+        }
+        return "Carro não encontrado para remoção";
+    }
+
     public CarroDTO converteParaDTO(CarroEntity carroEntity) {
         return new CarroDTO(carroEntity.getId(),
                 carroEntity.getMarca(),
