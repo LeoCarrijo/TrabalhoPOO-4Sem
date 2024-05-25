@@ -31,4 +31,9 @@ public class CarroController {
     public String removerCarro(@PathVariable Long id) {
         return injecao.removerCarro(id);
     }
+
+    @PutMapping
+    public List<CarroDTO> darDescontoGeral() {
+        return injecao.darDescontoGeral();
+    }
 }
