@@ -55,6 +55,14 @@ public class CarroService {
         return converteEntitiesParaDTOs(carroEntities);
     }
 
+    public CarroDTO atualizarPorId(Long id, CarroDTO carroDTO) {
+        if(injecao.existsById(id)) {
+            carroDTO.setId(id);
+            return converteParaDTO(injecao.save(converteParaEntity(carroDTO)));
+        }
+        return null;
+    }
+
     public CarroDTO converteParaDTO(CarroEntity carroEntity) {
         return new CarroDTO(carroEntity.getId(),
                 carroEntity.getMarca(),
