@@ -1,5 +1,6 @@
 package lvpradoleonardo.com.veiculos.service;
 
+import lvpradoleonardo.com.veiculos.model.dto.CarroDTO;
 import lvpradoleonardo.com.veiculos.model.entity.CarroEntity;
 import lvpradoleonardo.com.veiculos.model.repository.CarroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,5 +12,21 @@ public class CarroService {
     CarroRepository injecao;
     public CarroEntity insere(CarroEntity carro) {
         return injecao.save(carro);
+    }
+
+    public CarroDTO converteParaDTO(CarroEntity carroEntity) {
+        return new CarroDTO(carroEntity.getId(),
+                carroEntity.getMarca(),
+                carroEntity.getModelo(),
+                carroEntity.getAno(),
+                carroEntity.getValor());
+    }
+
+    public CarroEntity converteParaEntity(CarroDTO carroDTO) {
+        return new CarroEntity(carroDTO.getId(),
+                carroDTO.getMarca(),
+                carroDTO.getModelo(),
+                carroDTO.getAno(),
+                carroDTO.getValor());
     }
 }
