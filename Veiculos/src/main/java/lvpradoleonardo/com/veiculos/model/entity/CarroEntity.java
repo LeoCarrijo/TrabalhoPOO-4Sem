@@ -26,7 +26,7 @@ public class CarroEntity {
     }
 
     public CarroEntity() {
-        
+
     }
 
     public Long getId() {
