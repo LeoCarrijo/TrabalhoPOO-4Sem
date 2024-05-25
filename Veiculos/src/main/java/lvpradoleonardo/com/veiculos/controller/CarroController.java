@@ -1,6 +1,6 @@
 package lvpradoleonardo.com.veiculos.controller;
 
-import lvpradoleonardo.com.veiculos.model.entity.CarroEntity;
+import lvpradoleonardo.com.veiculos.model.dto.CarroDTO;
 import lvpradoleonardo.com.veiculos.service.CarroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +14,7 @@ public class CarroController {
     @Autowired
     CarroService injecao;
     @PostMapping
-    public CarroEntity inserirCarro(@RequestBody CarroEntity carro) {
-        return injecao.insere(carro);
+    public CarroDTO inserirCarro(@RequestBody CarroDTO carroDTO) {
+        return injecao.insere(carroDTO);
     }
 }
