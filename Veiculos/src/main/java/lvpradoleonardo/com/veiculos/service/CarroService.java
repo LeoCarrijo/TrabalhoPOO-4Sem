@@ -46,6 +46,15 @@ public class CarroService {
         return "Carro não encontrado para remoção";
     }
 
+    public List<CarroDTO> darDescontoGeral() {
+        List<CarroEntity> carroEntities = injecao.findAll();
+        for (CarroEntity carroEntity : carroEntities) {
+            carroEntity.setValor((float) (carroEntity.getValor() * 0.80));
+            injecao.save(carroEntity);
+        }
+        return converteEntitiesParaDTOs(carroEntities);
+    }
+
     public CarroDTO converteParaDTO(CarroEntity carroEntity) {
         return new CarroDTO(carroEntity.getId(),
                 carroEntity.getMarca(),
