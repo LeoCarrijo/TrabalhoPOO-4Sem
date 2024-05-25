@@ -1,4 +1,4 @@
-package lvpradoleonardo.com.veiculos;
+package lvpradoleonardo.com.veiculos.model.entity;
 
 import jakarta.persistence.*;
 
