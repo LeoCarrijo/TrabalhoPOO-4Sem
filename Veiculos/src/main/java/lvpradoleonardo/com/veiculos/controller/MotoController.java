@@ -37,4 +37,9 @@ public class MotoController {
     public List<MotoDTO> darDescontoGeral() {
         return injecao.darDescontoGeral();
     }
+
+    @PatchMapping("/{id}")
+    public MotoDTO atualizarMoto(@PathVariable Long id, @RequestBody MotoDTO moto) {
+        return injecao.atualizarMoto(id, moto);
+    }
 }

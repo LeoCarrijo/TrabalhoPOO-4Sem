@@ -47,6 +47,14 @@ public class MotoService {
         return converteEntitiesParaDTO(motos);
     }
 
+    public MotoDTO atualizarMoto(Long id, MotoDTO motoDTO) {
+        if(injecao.existsById(id)) {
+            motoDTO.setId(id);
+            return converteParaDTO(injecao.save(converteParaEntity(motoDTO)));
+        }
+        return null;
+    }
+
     public List<MotoDTO> converteEntitiesParaDTO(List<MotoEntity> motoEntities) {
         List<MotoDTO> motoDTOs = new ArrayList<MotoDTO>();
         for (MotoEntity motoEntity : motoEntities) {
