@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class MotoService {
     @Autowired
     MotoRepository injecao;
-    public MotoEntity inserirMoto(MotoEntity moto) {
-        return injecao.save(moto);
+    public MotoDTO inserirMoto(MotoDTO motoDTO) {
+        return converteParaDTO(injecao.save(converteParaEntity(motoDTO)));
     }
 
     public MotoEntity converteParaEntity(MotoDTO motoDTO) {
