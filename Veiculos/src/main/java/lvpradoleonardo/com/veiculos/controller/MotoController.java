@@ -27,4 +27,9 @@ public class MotoController {
     public MotoDTO consultarMoto(@PathVariable Long id) {
         return injecao.consultarPorId(id);
     }
+
+    @DeleteMapping("/{id}")
+    public String removerMoto(@PathVariable Long id) {
+        return injecao.removerMoto(id);
+    }
 }

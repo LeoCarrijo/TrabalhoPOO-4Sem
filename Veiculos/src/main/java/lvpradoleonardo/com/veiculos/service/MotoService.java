@@ -30,6 +30,14 @@ public class MotoService {
         return null;
     }
 
+    public String removerMoto(Long id) {
+        if(injecao.existsById(id)) {
+            injecao.deleteById(id);
+            return "Moto removida com sucesso";
+        }
+        return "Moto não encontrada para remoção";
+    }
+
     public List<MotoDTO> converteEntitiesParaDTO(List<MotoEntity> motoEntities) {
         List<MotoDTO> motoDTOs = new ArrayList<MotoDTO>();
         for (MotoEntity motoEntity : motoEntities) {
