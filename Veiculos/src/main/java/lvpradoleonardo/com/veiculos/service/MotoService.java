@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MotoService {
@@ -19,6 +20,14 @@ public class MotoService {
 
     public List<MotoDTO> consultarMotos() {
         return converteEntitiesParaDTO(injecao.findAll());
+    }
+
+    public MotoDTO consultarPorId(Long id) {
+        Optional<MotoEntity> moto = injecao.findById(id);
+        if(moto.isPresent()) {
+            return converteParaDTO(moto.get());
+        }
+        return null;
     }
 
     public List<MotoDTO> converteEntitiesParaDTO(List<MotoEntity> motoEntities) {

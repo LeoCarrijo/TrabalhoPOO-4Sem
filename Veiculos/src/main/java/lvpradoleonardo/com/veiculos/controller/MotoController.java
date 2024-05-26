@@ -22,4 +22,9 @@ public class MotoController {
     public List<MotoDTO> consultarMotos() {
         return injecao.consultarMotos();
     }
+
+    @GetMapping("/{id}")
+    public MotoDTO consultarMoto(@PathVariable Long id) {
+        return injecao.consultarPorId(id);
+    }
 }
