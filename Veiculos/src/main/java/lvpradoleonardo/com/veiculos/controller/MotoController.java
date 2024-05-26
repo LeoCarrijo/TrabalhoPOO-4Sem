@@ -4,10 +4,9 @@ import lvpradoleonardo.com.veiculos.model.dto.MotoDTO;
 import lvpradoleonardo.com.veiculos.model.entity.MotoEntity;
 import lvpradoleonardo.com.veiculos.service.MotoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/moto")
@@ -17,5 +16,10 @@ public class MotoController {
     @PostMapping
     public MotoDTO inserirMoto(@RequestBody MotoDTO moto) {
         return injecao.inserirMoto(moto);
+    }
+
+    @GetMapping
+    public List<MotoDTO> consultarMotos() {
+        return injecao.consultarMotos();
     }
 }
