@@ -1,5 +1,6 @@
 package lvpradoleonardo.com.veiculos.controller;
 
+import lvpradoleonardo.com.veiculos.model.dto.MotoDTO;
 import lvpradoleonardo.com.veiculos.model.entity.MotoEntity;
 import lvpradoleonardo.com.veiculos.service.MotoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class MotoController {
     @Autowired
     MotoService injecao;
     @PostMapping
-    public MotoEntity inserirMoto(@RequestBody MotoEntity moto) {
+    public MotoDTO inserirMoto(@RequestBody MotoDTO moto) {
         return injecao.inserirMoto(moto);
     }
 }
