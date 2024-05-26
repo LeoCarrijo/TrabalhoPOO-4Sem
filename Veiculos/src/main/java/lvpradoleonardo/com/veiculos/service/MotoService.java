@@ -38,6 +38,15 @@ public class MotoService {
         return "Moto não encontrada para remoção";
     }
 
+    public List<MotoDTO> darDescontoGeral() {
+        List<MotoEntity> motos = injecao.findAll();
+        for(MotoEntity moto : motos) {
+            moto.setValor((float) (moto.getValor() * 0.75));
+            injecao.save(moto);
+        }
+        return converteEntitiesParaDTO(motos);
+    }
+
     public List<MotoDTO> converteEntitiesParaDTO(List<MotoEntity> motoEntities) {
         List<MotoDTO> motoDTOs = new ArrayList<MotoDTO>();
         for (MotoEntity motoEntity : motoEntities) {

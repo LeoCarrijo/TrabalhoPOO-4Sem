@@ -32,4 +32,9 @@ public class MotoController {
     public String removerMoto(@PathVariable Long id) {
         return injecao.removerMoto(id);
     }
+
+    @PutMapping
+    public List<MotoDTO> darDescontoGeral() {
+        return injecao.darDescontoGeral();
+    }
 }
