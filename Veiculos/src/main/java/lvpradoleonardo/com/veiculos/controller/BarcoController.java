@@ -23,6 +23,11 @@ public class BarcoController {
         return injecao.consultarBarcos();
     }
 
+    @GetMapping("/{id}")
+    public BarcoDTO consultarBarcoPorId(@PathVariable Long id) {
+        return injecao.consultarPorId(id);
+    }
+
     @DeleteMapping("/{id}")
     public String removerBarco(@PathVariable Long id) {
         return injecao.removerbarco(id);
